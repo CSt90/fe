@@ -4,8 +4,17 @@ import { Input } from "@/components/ui/input";
 import Container from "./components/Container";
 import { useState } from "react";
 
+import {
+  useQuery,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from "@tanstack/react-query";
+
 export default function Home() {
   const [houseFilter, setHouseFilter] = useState("");
+
+  const queryClient = new QueryClient();
 
   return (
     <div
@@ -21,7 +30,10 @@ export default function Home() {
           onChange={(event) => setHouseFilter(event.target.value)}
           style={{ fontFamily: "Verdana, sans serif" }}
         />
-        <Container houseQ={houseFilter} />
+        <QueryClientProvider client={queryClient}>
+          {/* <Todos /> */}
+          <Container houseQ={houseFilter} />
+        </QueryClientProvider>
       </main>
     </div>
   );
