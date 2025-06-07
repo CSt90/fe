@@ -20,7 +20,7 @@ export default function Container(props) {
 
   const fetchHouses = async () => {
     const res = await fetch(`${API_URL}/houses${qParams}`);
-    if (!res.ok) throw new Error("Error");
+    if (!res.ok) throw new Error("Server did not respond");
     return res.json();
   };
 
