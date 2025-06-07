@@ -18,6 +18,8 @@ export default function Container(props) {
       ? "http://localhost:5000/api"
       : process.env.API_URL;
 
+  console.log(process.env.NODE_ENV);
+
   const fetchHouses = async () => {
     const res = await fetch(`${API_URL}/houses${qParams}`);
     if (!res.ok) throw new Error("Error");
