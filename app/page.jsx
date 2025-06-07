@@ -1,7 +1,7 @@
 "use client";
 
 import { Input } from "@/components/ui/input";
-import Container from "./components/Container";
+import Container from "../components/Container";
 import { useState } from "react";
 
 import {

@@ -16,7 +16,7 @@ export default function Container(props) {
   const API_URL =
     process.env.NODE_ENV === "development"
       ? "http://localhost:5000/api"
-      : "https://wizard-world-api.herokuapp.com";
+      : process.env.API_URL;
 
   const fetchHouses = async () => {
     const res = await fetch(`${API_URL}/houses${qParams}`);
