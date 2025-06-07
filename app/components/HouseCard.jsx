@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardAction,
@@ -47,11 +46,11 @@ const HouseCard = (props) => {
   const handleFilterTraits = (text) => {
     setTraitsFilter(text);
     if (text !== "") {
-      filteredTraits = traits.filter((trait) => trait.name.includes(text));
+      filteredTraits = traits.filter((trait) =>
+        trait.name.toLowerCase().includes(text.toLowerCase())
+      );
       setFTraits(filteredTraits);
     } else setFTraits(traits);
-
-    console.log(traitsFilter);
   };
 
   return (

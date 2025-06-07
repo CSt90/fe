@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-//test tanstack
+//test tanstack to fetch from api
 import { useQuery } from "@tanstack/react-query";
 import HouseCard from "./HouseCard";
 import { Loader2Icon } from "lucide-react";
@@ -13,12 +12,14 @@ export default function Container(props) {
   let qParams = "";
   if (houseQ !== "") qParams = "?name=" + houseQ.toLowerCase();
 
-  // houses to display
-  const [houses, setHouses] = useState();
+  // switch api url
+  const API_URL =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:5000/api"
+      : "https://wizard-world-api.herokuapp.com";
 
   const fetchHouses = async () => {
-    const res = await fetch("http://localhost:5000/api/houses" + qParams);
-    console.log("http://localhost:5000/api/houses" + qParams);
+    const res = await fetch(`${API_URL}/houses${qParams}`);
     if (!res.ok) throw new Error("Error");
     return res.json();
   };
@@ -38,8 +39,6 @@ export default function Container(props) {
   if (isError) {
     return <span>Error: {error.message}</span>;
   }
-
-  console.log(data);
 
   // fetch and display house cards
   // useEffect(() => {
