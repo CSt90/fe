@@ -13,12 +13,10 @@ export default function Container(props) {
   if (houseQ !== "") qParams = "?name=" + houseQ.toLowerCase();
 
   // switch api url
-  const API_URL =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:5000/api"
-      : process.env.API_URL;
-
-  console.log(process.env.NODE_ENV);
+  let API_URL;
+  process.env.NODE_ENV === "development"
+    ? (API_URL = "http://localhost:5000/api")
+    : (API_URL = process.env.API_URL);
 
   const fetchHouses = async () => {
     const res = await fetch(`${API_URL}/houses${qParams}`);
