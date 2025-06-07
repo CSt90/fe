@@ -15,11 +15,11 @@ export default function Container(props) {
   // switch api url
   let API_URL;
   process.env.NODE_ENV === "development"
-    ? (API_URL = "http://localhost:5000/api")
+    ? (API_URL = process.env.NEXT_PUBLIC_API_URL)
     : (API_URL = process.env.API_URL);
 
   const fetchHouses = async () => {
-    const res = await fetch(`${API_URL}/houses${qParams}`);
+    const res = await fetch(API_URL + qParams);
     if (!res.ok) throw new Error("Server did not respond");
     return res.json();
   };
