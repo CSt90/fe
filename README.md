@@ -9,7 +9,7 @@ This React frontend fetches Hogwarts houses data from an API and displays the ho
 - Built with React.js and Javascript
 - Uses **shadcn/ui components**, **Lucide React Icon(s)** & **Tailwind CSS** for styling and UI elements
 - Uses Verdana font and displays a loading spinner while fetching data
-- Search bar on main page passes search input to house list component
+- Search bar on main page passes search input to house list (Container) component
 - Fetches houses from the API and filters by name _server-side_ when the API supports it
 - If the API does not support filtering (e.g., external API), the frontend fetches all houses and no filtering is possible.
 
