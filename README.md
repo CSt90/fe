@@ -1,4 +1,4 @@
-# Hogwarts Houses Frontend (Next.js + Javascript)
+# Hogwarts Houses Frontend (React.js + Javascript)
 
 ## Overview
 
@@ -6,7 +6,7 @@ This React frontend fetches Hogwarts houses data from an API and displays the ho
 
 ## Features
 
-- Built with Next.js and Javascript
+- Built with React.js and Javascript
 - Uses **shadcn/ui components**, **Lucide React Icon(s)** & **Tailwind CSS** for styling and UI elements
 - Uses Verdana font and displays a loading spinner while fetching data
 - Search bar on main page passes search input to house list component
