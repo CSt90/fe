@@ -17,13 +17,13 @@ This React frontend fetches Hogwarts houses data from an API and displays the ho
 
 Set the API URL in `.env.local`:
 
-NEXT_PUBLIC_API_URL=https://wizard-world-api.herokuapp.com/houses
+NEXT_PUBLIC_API_URL=[https://wizard-world-be.onrender.com/houses](https://wizard-world-be.onrender.com/houses)
 
 or
 
-NEXT_PUBLIC_API_URL=http://localhost:5000/api/houses
+NEXT_PUBLIC_LOCAL_API_URL=http://localhost:5000/houses
 
-depending on whether you use the external API or the matching local backend that was created for this project.
+depending on whether you use the external API or the matching local backend [wizard-world-be](https://github.com/CSt90/wizard-world-be) that was created for this project.
 
 ## Running Locally
 

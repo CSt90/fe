@@ -1,11 +1,11 @@
 "use client";
 import React, { useState } from "react";
+
+// use shadcn components to display elements
 import {
   Card,
   CardAction,
   CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -39,10 +39,16 @@ const HouseCard = (props) => {
       ? gradient
       : ["white", "black"];
 
+  // state control for the search bar user input
   const [traitsFilter, setTraitsFilter] = useState("");
+
+  // state control for filtered traits
   const [fTraits, setFTraits] = useState(traits);
+
+  // temp traits array based on filter
   let filteredTraits = traits;
 
+  // filtering the traits
   const handleFilterTraits = (text) => {
     setTraitsFilter(text);
     if (text !== "") {
